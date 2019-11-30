@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "Student" table = "Student">
+
+        <meta attribute = "class-description">
+            This sample class demonstrates how to use hibernate binding in xml
+        </meta>
+
+        <id name = "id" type = "int" column = "Id">
+            <generator class="native"/>
+        </id>
+
+        <set name = "exams" cascade="all">
+            <key column = "studentId"/>
+            <one-to-many class="Exam"/>
+        </set>
+
+        <property name = "name" column = "Name" type = "string"/>
+        <property name = "birthdate" column = "Birthdate" type = "date"/>
+
+    </class>
+    <class name = "Exam" table = "EXAM">
+
+        <meta attribute = "class-description">
+            This class contains the exam records.
+        </meta>
+
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "mark" column = "mark" type = "int"/>
+
+    </class>
+</hibernate-mapping>

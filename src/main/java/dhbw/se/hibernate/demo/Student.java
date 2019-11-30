@@ -1,12 +1,23 @@
 package dhbw.se.hibernate.demo;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
+@Entity
+@Table(name = "STUDENT")
 public class Student {
+    @Id @GeneratedValue
+    @Column(name = "Id")
     private int Id;
+
+    @Column(name = "Name")
     private String Name;
+
+    @Column(name = "Birthdate")
     private Date birthdate;
+
+    @OneToMany()
     private Set<Exam> exams;
 
     public Student(String name, Date birthdate) {

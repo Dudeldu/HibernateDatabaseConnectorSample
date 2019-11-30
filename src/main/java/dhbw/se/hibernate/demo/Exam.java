@@ -1,7 +1,15 @@
 package dhbw.se.hibernate.demo;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "EXAM")
 public class Exam {
+    @Id @GeneratedValue
+    @Column(name = "Id")
     private int Id;
+
+    @Column(name = "mark")
     private int mark;
 
     public Exam(int mark) {

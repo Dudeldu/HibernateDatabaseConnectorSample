@@ -4,9 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dhbw-se</groupId>
-    <artifactId>hibernate</artifactId>
+    <groupId>software-engeneering</groupId>
+    <artifactId>Hibernate</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-agroal</artifactId>
+            <version>5.3.14.Final</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.2.jre7</version>
+        </dependency>
+    </dependencies>
 
 </project>
